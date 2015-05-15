@@ -125,6 +125,13 @@ describe('Menu', function() {
   });
 
   describe('#open', function() {
+    it('should set scroll top of node to 0', function() {
+      spyOn(this.view.$node, 'scrollTop');
+      this.view.open();
+
+      expect(this.view.$node.scrollTop).toHaveBeenCalledWith(0);
+    });
+
     it('should add open class to node', function() {
       this.$node.removeClass(www.classes.open);
       this.view.open();
@@ -233,13 +240,14 @@ describe('Menu', function() {
       var $selectable, datum;
 
       $selectable = $('<div>').data({
+        'tt-selectable-dataset': 'foo',
         'tt-selectable-display': 'one',
         'tt-selectable-object': 'two'
       });
 
       data = this.view.getSelectableData($selectable);
 
-      expect(data).toEqual({ val: 'one', obj: 'two' });
+      expect(data).toEqual({ dataset: 'foo', val: 'one', obj: 'two' });
     });
 
     it('should return null if no element is given', function() {
