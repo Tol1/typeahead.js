@@ -18,7 +18,7 @@ module.exports = function(config) {
     },
 
     files: [
-      'bower_components/jquery/jquery.js',
+      'node_modules/jquery/dist/jquery.js',
       'src/common/utils.js',
       'src/bloodhound/version.js',
       'src/bloodhound/tokenizers.js',
@@ -41,8 +41,8 @@ module.exports = function(config) {
       'src/typeahead/typeahead.js',
       'src/typeahead/plugin.js',
       'test/fixtures/**/*',
-      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-      'bower_components/jasmine-ajax/lib/mock-ajax.js',
+      'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
+      'node_modules/jasmine-ajax/lib/mock-ajax.js',
       'test/helpers/**/*',
       'test/**/*_spec.js'
     ]
